@@ -1,5 +1,5 @@
 AC_INIT(pwauth, 2.3.12)
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE(foreign)
 AC_PREREQ(2.69)
 
 AC_CONFIG_SRCDIR(Makefile.in)
