@@ -123,7 +123,7 @@
 
 /* #define SHADOW_NONE		/**/
 /* #define SHADOW_BSD		/* FreeBSD, NetBSD, OpenBSD, BSDI, OS X */
-#define SHADOW_SUN		/* Linux, Solaris, IRIX */
+/* #define SHADOW_SUN		/* Linux, Solaris, IRIX */
 /* #define SHADOW_JFH		/**/
 /* #define SHADOW_MDW		/**/
 /* #define SHADOW_AIX		/* AIX (see also AUTHENTICATE_AIX) */
@@ -213,8 +213,8 @@
  * uid numbers.
  */
 
-#define UNIX_LASTLOG		/**/
-#define HAVE_LASTLOG_H		/**/
+/* #define UNIX_LASTLOG		/**/
+/* #define HAVE_LASTLOG_H		/**/
 
 
 /* If NOLOGIN_FILE is defined to the full path name of a file, then the
@@ -227,8 +227,8 @@
  * right with PAM.
  */
 
-#define NOLOGIN_FILE "/etc/nologin"	/**/
-#define MIN_NOLOGIN_UID 1		/**/
+/* #define NOLOGIN_FILE "/etc/nologin"	/**/
+/* #define MIN_NOLOGIN_UID 1		/**/
 
 
 /* Defining CHECK_LOGIN_EXPIRATION and CHECK_PASSWORD_EXPIRATION causes
@@ -240,8 +240,8 @@
  * system to test on, I haven't bothered.
  */
 
-#define CHECK_LOGIN_EXPIRATION		/**/
-#define CHECK_PASSWORD_EXPIRATION	/**/
+/* #define CHECK_LOGIN_EXPIRATION		/**/
+/* #define CHECK_PASSWORD_EXPIRATION	/**/
 
 
 /* It is generally sensible to restrict what users can run pwauth.  Though
@@ -279,7 +279,7 @@
  * to change the uid list.
  */
 
-#define SERVER_UIDS 30		/* user "wwwrun" on the author's system */
+/* #define SERVER_UIDS 30		/* user "wwwrun" on the author's system */
 
 
 /* If MIN_UNIX_UID is defined to an integer, logins with uid numbers less than
@@ -291,7 +291,7 @@
  * given value will be accepted).
  */
 
-#define MIN_UNIX_UID 500	/**/
+/* #define MIN_UNIX_UID 500	/**/
 
 
 /* If IGNORE_CASE is defined, the login given is checked in two different
@@ -320,7 +320,7 @@
  * SLEEP_LOCK.  SLEEP_TIME defaults to 2 seconds if not defined.
  */
 
-#define SLEEP_LOCK "/var/run/pwauth.lock"
+/* #define SLEEP_LOCK "/var/run/pwauth.lock"
 
 
 /* If ENV_METHOD is defined, pwauth expects mod_auth_external to be configured
@@ -337,4 +337,4 @@
  * this.
  */
 
-#define PATHS_H 		/**/
+/* #define PATHS_H 		/**/
