@@ -6,7 +6,7 @@ That repository has not been updated since August 2018, and release 2.3.11
 was still unreleased as of January 2021.
 
 This fork incorporates all of the outstanding pull requests on
-https://github.com/phokz/pwauth.  Support for autoconf and buildibg debian
+https://github.com/phokz/pwauth.  Support for autoconf and building debian
 packages building has also been added.  Pull requests and contributors
 are welcome.
 
