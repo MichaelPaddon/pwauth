@@ -1,5 +1,6 @@
 sbin_PROGRAMS = pwauth checkfaillog
 dist_sbin_SCRIPTS = unixgroup
+dist_man8_MANS = pwauth.man
 
 pwauth_SOURCES = main.c\
 	auth_aix.c auth_bsd.c auth_hpux.c auth_mdw.c\
