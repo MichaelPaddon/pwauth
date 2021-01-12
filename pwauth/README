@@ -1,8 +1,18 @@
-			       pwauth 2.3.12~mwp
+                             pwauth 2.3.12~mwp
+
+This is a fork of Jan Wolter's pwauth.  Jan Wolter passed away on
+January 1, 2015.  Developement was moved to https://github.com/phokz/pwauth.
+That repository has not been updated since August 2018, and release 2.3.11
+was unreleased as of January 2021.
+
+This is a fork of https://github.com/phokz/pwauth, incorporating all of its
+outstanding pull requests. Support for autoconf and debian package building
+has also been added. Pull requests and contributors are welcome.
+
 
                              Author: Jan Wolter
 
-		      http://www.unixpapa.com/pwauth/
+                       http://www.unixpapa.com/pwauth/
 
 Pwauth is a conceptually a simple program.  You run it, giving it a login
 and a password, and it returns a status code telling whether or not that
@@ -55,4 +65,4 @@ information is in the comments in the "pwauth.h" file.
 Versions of pwauth before version 2.2.8 were distributed as part of the
 mod_auth_external distribution.
 
-Author and Maintainer:  Jan Wolter  http://www.unixpapa.com/
+Author:  Jan Wolter  http://www.unixpapa.com/
