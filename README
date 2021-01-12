@@ -1,13 +1,14 @@
                              pwauth 2.3.12~mwp
 
 This is a fork of Jan Wolter's pwauth.  Jan Wolter passed away on
-January 1, 2015.  Developement was moved to https://github.com/phokz/pwauth.
+January 1, 2015.  Development was moved to https://github.com/phokz/pwauth.
 That repository has not been updated since August 2018, and release 2.3.11
-was unreleased as of January 2021.
+was still unreleased as of January 2021.
 
-This is a fork of https://github.com/phokz/pwauth, incorporating all of its
-outstanding pull requests. Support for autoconf and debian package building
-has also been added. Pull requests and contributors are welcome.
+This fork incorporates all of the outstanding pull requests on
+https://github.com/phokz/pwauth.  Support for autoconf and buildibg debian
+packages building has also been added.  Pull requests and contributors
+are welcome.
 
 
                              Author: Jan Wolter
