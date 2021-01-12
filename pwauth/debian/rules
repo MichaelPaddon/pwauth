@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS:=hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	autoreconf -i
+	dh_auto_configure -- --prefix=/usr --enable-pam --enable-min-unix-id=100
+
+override_dh_auto_install:
+	dh_auto_install
+	rm debian/pwauth/usr/sbin/checkfaillog
+	rm debian/pwauth/usr/sbin/unixgroup
+
+override_dh_fixperms:
+	dh_fixperms
+	chown root:www-data debian/pwauth/usr/sbin/pwauth
+	chmod 4755  debian/pwauth/usr/sbin/pwauth

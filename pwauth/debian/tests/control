@@ -1,0 +1,4 @@
+Test-Command: useradd test-pwauth;
+              echo "test-pwauth:password" | chpasswd;
+              (echo test-pwauth; echo password) | pwauth
+Restrictions: needs-root

@@ -1,0 +1,81 @@
+pwauth (2.3.12~mwp) unstable; urgency=medium
+
+  * debian/control:
+      - Update to reflect fork.
+  * debian/rules:
+      - Use configure script.
+  * Import Debian build directory.
+  * Support GNU autoconf.
+  * Set PAM_RHOST item from environment variables.
+  * More cleanup regarding headers, declarations, etc.
+  * Fork from https://github.com/phokz/pwauth.
+
+ -- Michael Paddon <michael@paddon.org>  Tue, 12 Jan 2021  08:23:24 +0000
+
+pwauth (2.3.11-3) unstable; urgency=medium
+
+  * QA upload.
+  * debian/control:
+      - Added VCS fields.
+  * debian/salsa-ci.yml:
+      - Added to provide CI tests for Salsa.
+      - Added allow_failure to reprotest.
+
+ -- Francisco Vilmar Cardoso Ruviaro <francisco.ruviaro@riseup.net>  Thu, 04 Jun 2020 00:11:42 +0000
+
+pwauth (2.3.11-2) unstable; urgency=medium
+
+  * QA upload.
+  * debian/tests/control:
+      - Created to perform a trivial test.
+
+ -- Francisco Vilmar Cardoso Ruviaro <francisco.ruviaro@riseup.net>  Mon, 25 May 2020 21:20:55 +0000
+
+pwauth (2.3.11-1) unstable; urgency=medium
+
+  * QA upload.
+  * Set Debian QA Group as maintainer. (see #673652)
+  * Using new DH level format. Consequently:
+      - debian/compat: removed.
+      - debian/control: changed from 'debhelper' to 'debhelper-compat' in
+        Build-Depends field and bumped level to 13.
+  * debian/control:
+      - Added 'Rules-Requires-Root: binary-targets' to source stanza.
+      - Bumped Standards Version to 4.5.0.
+      - Fix spelling error in description.
+  * debian/copyright:
+      - Migrated to 1.0 format.
+      - Updated packaging copyright.
+  * debian/pwauth.man:
+      - Fix spelling error.
+
+ -- Francisco Vilmar Cardoso Ruviaro <francisco.ruviaro@riseup.net>  Mon, 11 May 2020 19:33:17 +0000
+
+pwauth (2.3.11-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Drop the build dependency on hardening-wrapper. (Closes: #836760)
+    - We can drop the manual CFLAGS passing; this is done automatically with
+      debhelper 9 and dh_auto_* commands.
+
+ -- Chris Lamb <lamby@debian.org>  Sun, 25 Sep 2016 12:11:51 +0200
+
+pwauth (2.3.11-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream release.
+  * Convert source package to 3.0 (quilt)
+  * Compile without SERVER_UIDS to be usable not only by apache (eg. exim) (Closes: #572492)
+  * Install SUID root (Closes: #615027)
+  * debian/control: - Build-Depends on hardening-includes
+                    - remote cdbs
+  * debian/compat: version 9
+  * debian/rules: use debhelper v9, hardening
+
+ -- Petr Čech <cech@debian.org>  Tue, 06 May 2014 12:46:28 +0200
+
+pwauth (2.3.8-1) unstable; urgency=low
+
+  * Initial release (Closes: #526762)
+
+ -- Hai Zaar <haizaar@haizaar.com>  Sun, 05 May 2009 20:37:00 +0300
