@@ -12,16 +12,65 @@ with other forms of authentication.
       as dynamically loaded modules.  See the module installation instructions
       for detail.
 
- (2)  Edit the config.h file in this directory to set the configuration
-      appropriate for your system.  There are lots of comments in the file.
+ (2)  Run "autoreconf -i" to generate the configure script.  This file may
+      already exist if you received a source distribution.
 
- (3)  If you are using PAM on Linux, you could be missing the header files
+ (3)  Run "./configure" to generate the Makefile.  You MUST enable exactly
+      one authentication backend with a flag or compilation will fail:
+        --enable-shadow-none    authenticate using legacy password file
+        --enable-shadow-bsd     authenticate using BSD shadow password file
+        --enable-shadow-sun     authenticate using Sun shadow password file
+        --enable-shadow-jfh     authenticate using JFH shadow API
+        --enable-shadow-mdw     authenticate using MDW shadow API
+        --enable-shadow-aix     authenticate using AIX shadow password file
+        --enable-shadow-hpux    authenticate using HPUX shadow password file
+        --enable-pam            authenticate using PAM
+        --enable-pam-solaris    authenticate using PAM on Solaris
+        --enable-pam-solaris-26 authenticate using PAM on Solaris 2.6
+        --enable-pam-old-os-x   authenticate using PAM on old versions of OS X
+        --enable-login-conf-openbsd
+                                authenticate using OpenBSD login.conf
+        --enable-authenticate-aix
+                                authenticate using AIX system call
+
+      Other configuration options are:
+        --enable-faillog-jfh    enable JFH failure logging
+        --enable-faillog-openbsd
+                                enable OpenBSD failure logging
+        --enable-faillog-pwauth enable pwauth failure logging
+        --enable-path-faillog=<path>
+                                specify path of failure log
+        --enable-max-fail-count=<number>
+                                specify maximum failure count
+        --enable-reset-fail-count
+                                enable reset of failure count
+        --enable-unix-lastlog   enable updating of lastlog entry
+        --enable-nologin-file=<path>
+                                enable checking of nologin file
+        --enable-min-nologin-uid=<uid>
+                                specify minimum uid permitted to login
+        --enable-check-login-expiration
+                                enable checking login expiration
+        --enable-check-password-expiration
+                                enable checking password expiration
+        --enable-server-uids=<comma_seperated_uid_list>
+                                enable checking of uids
+        --enable-min-unix-id=<uid>
+                                enable minimum authenticatable uid
+        --enable-ignore-case    enable case insensitive authentication
+        --enable-domain-name    enable windows domain name stripping
+        --enable-sleep-lock=<path>
+                                enable sleep lock
+        --enable-sleep-time=<seconds>
+                                specify sleep time
+        --enable-env-method     enable passing of parameters in environment
+
+      These options are documented in greater detail in config.h
+
+ (4)  If you are using PAM on Linux, you could be missing the header files
       you need to compile the auth_pam.c file.  You may need to load some
       sort of PAM development module this isn't part of the standard install
       to get these headers.
-
- (4)  Edit the Makefile in this directory, setting appropriate CC, LIB and
-      LOCALFLAGS variables.
 
  (5)  Do "make" to compile the program.
 
@@ -77,13 +126,17 @@ with other forms of authentication.
       the exit code (in csh:  "echo $status"  in sh:  "echo $?").  It should
       be 0 for correct login/password pairs and 1 otherwise.
 
- (8)  Install it in some sensible place (say, /usr/local/libexec/pwauth).
+ (8)  Run "make install" to install pwauth and support programs in
+      $prefix/sbin.  Alternatively, copy pwauth by hand to some sensible place
+      (say, /usr/local/libexec/pwauth).
+
       Unless you are doing SHADOW_NONE, it should be suid-root, so that
       it has the necessary access to read the shadow file.  That is, the
-      file should be owned by root, and you should do "chmod u+s pwauth" on
-      it.  After you've installed it, it is worth su-ing to whatever account
-      your httpd runs under and testing pwauth again from that account.  This
-      should confirm that all the uid's and suid-bits are configured correctly.
+      pwauth executable should be owned by root, and you should do
+      "chmod u+s pwauth" on it.  After you've installed it, it is worth
+      su-ing to whatever account your httpd runs under and testing pwauth
+      again from that account.  This should confirm that all the uid's
+      and suid-bits are configured correctly.
 
       On OpenBSD the master password database is readable (but not writable)
       to group _shadow, so you should be able to install it sgid to group
