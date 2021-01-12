@@ -1,4 +1,4 @@
-AC_INIT(pwauth-mwp, 2.3.12-alpha)
+AC_INIT(pwauth, 2.3.12~mwp)
 AM_INIT_AUTOMAKE(foreign)
 AC_PREREQ(2.69)
 

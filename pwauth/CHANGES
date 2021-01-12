@@ -1,6 +1,13 @@
 Pwauth Change Log
 =================
 
+VERSION 2.3.12~mwp - Jan 12, 2021
+  - Import and tweak Debian build directory.
+  - Support GNU autoconf.
+  - Set PAM_RHOST item from environment variables.
+  - More cleanup regarding headers, declarations, etc.
+  - Fork from https://github.com/phokz/pwauth.
+
 VERSION 2.3.11 -
   - Don't define "uid" variable if SERVER_UID is not defined.
   - Removed old-style strchr prototype.
