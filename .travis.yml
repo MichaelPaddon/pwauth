@@ -12,6 +12,7 @@ compiler:
   - clang
 
 before_script:
+  - autoreconf -i
   - configure --enable-pam --enable-min-unix-id=100
 
 script:
